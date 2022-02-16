@@ -2,12 +2,12 @@ import java.util.Arrays;
 
 public class HomeWork18 {
     static boolean isGreenLight = false;
+    static int MAX_SPEED = 3;
 
     public static int amountLoser(int[] speeds) {
-        int speedWin = 0;
         int Loser = 0;
         for (int i = 0; i < speeds.length; i++) {
-            if (speedWin != speeds[i]) {
+            if (MAX_SPEED < speeds[i]) {
                 Loser = Loser + 1;
             }
         }
@@ -15,17 +15,16 @@ public class HomeWork18 {
     }
 
     public static int[] arraySpeedLoser(int[] speeds) {
-        int speedWin = 0;
         int cnt = 0;
         for (int speed : speeds) {
-            if (speedWin != speed) {
+            if (MAX_SPEED < speed) {
                 cnt++;
             }
         }
         int[] speedsLoser = new int[cnt];
         int i = 0;
         for (int speed : speeds) {
-            if (speedWin != speed) {
+            if (MAX_SPEED < speed) {
                 speedsLoser[i] = speed;
                 i++;
             }
@@ -34,17 +33,16 @@ public class HomeWork18 {
     }
 
     public static int[] arraySpeedWin(int[] speeds) {
-        int speedWin = 0;
         int cnt = 0;
         for (int speed : speeds) {
-            if (speedWin == speed) {
+            if (MAX_SPEED >= speed) {
                 cnt++;
             }
         }
         int[] speedsWin = new int[cnt];
         int i = 0;
         for (int speed : speeds) {
-            if (speedWin == speed) {
+            if (MAX_SPEED >= speed) {
                 speedsWin[i] = speed;
                 i++;
             }
