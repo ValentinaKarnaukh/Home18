@@ -6,9 +6,11 @@ public class HomeWork18 {
 
     public static int amountLoser(int[] speeds) {
         int Loser = 0;
-        for (int i = 0; i < speeds.length; i++) {
-            if (MAX_SPEED < speeds[i]) {
-                Loser = Loser + 1;
+        for (int speed : speeds) {
+            if (!isGreenLight) {
+                if (MAX_SPEED < speed) {
+                    Loser = Loser + 1;
+                }
             }
         }
         return Loser;
@@ -17,16 +19,20 @@ public class HomeWork18 {
     public static int[] arraySpeedLoser(int[] speeds) {
         int cnt = 0;
         for (int speed : speeds) {
-            if (MAX_SPEED < speed) {
-                cnt++;
+            if (!isGreenLight) {
+                if (MAX_SPEED < speed) {
+                    cnt++;
+                }
             }
         }
         int[] speedsLoser = new int[cnt];
         int i = 0;
         for (int speed : speeds) {
-            if (MAX_SPEED < speed) {
-                speedsLoser[i] = speed;
-                i++;
+            if (!isGreenLight) {
+                if (MAX_SPEED < speed) {
+                    speedsLoser[i] = speed;
+                    i++;
+                }
             }
         }
         return speedsLoser;
@@ -35,16 +41,20 @@ public class HomeWork18 {
     public static int[] arraySpeedWin(int[] speeds) {
         int cnt = 0;
         for (int speed : speeds) {
-            if (MAX_SPEED >= speed) {
-                cnt++;
+            if (!isGreenLight) {
+                if (MAX_SPEED >= speed) {
+                    cnt++;
+                }
             }
         }
         int[] speedsWin = new int[cnt];
         int i = 0;
         for (int speed : speeds) {
-            if (MAX_SPEED >= speed) {
-                speedsWin[i] = speed;
-                i++;
+            if (!isGreenLight) {
+                if (MAX_SPEED >= speed) {
+                    speedsWin[i] = speed;
+                    i++;
+                }
             }
         }
         return speedsWin;
