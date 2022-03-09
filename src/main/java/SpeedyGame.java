@@ -15,13 +15,13 @@ public class SpeedyGame extends Game {
 
     SpeedyGame(boolean isGreenLight, int MAX_SPEED) {
         super(Game.isGreenLight = isGreenLight);
-        SpeedyGame.MAX_SPEED = MAX_SPEED;
+        SpeedyGame.setMaxSpeed(MAX_SPEED);
     }
 
     @Override
     boolean isFailed(int speed) {
         if (!isGreenLight) {
-            if (speed > MAX_SPEED) {
+            if (speed > getMaxSpeed()) {
                 return true;
             } else {
                 return false;

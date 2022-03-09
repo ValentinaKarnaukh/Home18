@@ -1,7 +1,7 @@
 public class Game {
-    static boolean isGreenLight;
+    public static boolean isGreenLight;
 
-    public boolean isGreenLight() {
+    public static boolean isGreenLight() {
         return isGreenLight;
     }
 
