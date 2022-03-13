@@ -1,10 +1,10 @@
 public class GamesConditions {
-    static boolean isGreenLight;
+    boolean isGreenLight;
     static int MAX_SPEED;
 
     public GamesConditions(boolean isGreenLight, int MAX_SPEED) {
-        GamesConditions.isGreenLight = isGreenLight;
-        GamesConditions.MAX_SPEED = MAX_SPEED;
+        this.isGreenLight = isGreenLight;
+        this.MAX_SPEED = MAX_SPEED;
     }
 
     public int amountLoser(String[] namePlayers) {
