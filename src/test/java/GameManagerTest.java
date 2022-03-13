@@ -19,10 +19,10 @@ public class GameManagerTest {
         GameManager gameManager = new GameManager(new SpeedyGame(false, 3));
         gameManager.setSpeeds(new int[]{5, 0, 2, 4, 3});
 
-
-        int expected = 2;
-        int actual = gameManager.roundsMaxSpeed(gameManager.getSpeeds());
+        int expected = 3;
+        int actual = gameManager.rounds(gameManager.getSpeeds());
 
         Assertions.assertEquals(expected, actual);
     }
+
 }

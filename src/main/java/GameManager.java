@@ -1,6 +1,6 @@
 public class GameManager {
 
-    private int[] speeds;
+    protected int[] speeds;
 
     public int[] getSpeeds() {
         return speeds;
@@ -14,28 +14,17 @@ public class GameManager {
         this.game = game;
     }
 
-    Game game = new SpeedyGame(SpeedyGame.isGreenLight(), SpeedyGame.MAX_SPEED);
+    Game game = new Game(false);
 
 
     public int rounds(int[] speeds) {
         int cnt = 0;
-        if (!Game.isGreenLight) {
+        if (!game.isGreenLight) {
             for (int round : speeds) {
-                if (round == 0) {
+                if (game.isFailed(round) == false) {
                     cnt++;
                 }
             }
-        }
-        return cnt;
-    }
-
-    public int roundsMaxSpeed(int[] speeds) {
-        int cnt = 0;
-        if (!Game.isGreenLight) {
-            for (int round : speeds)
-               if (round < SpeedyGame.MAX_SPEED) {
-                    cnt++;
-                }
         }
         return cnt;
     }
