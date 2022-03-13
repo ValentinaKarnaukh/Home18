@@ -1,32 +1,23 @@
 public class SpeedyGame extends Game {
-    SpeedyGame(boolean isGreenLight) {
+    protected int MAX_SPEED;
+    SpeedyGame(boolean isGreenLight, int MAX_SPEED) {
         super(isGreenLight);
+        this.MAX_SPEED = MAX_SPEED;
     }
 
-    static int MAX_SPEED;
-
-    public static int getMaxSpeed() {
+    public int getMaxSpeed() {
         return MAX_SPEED;
     }
 
-    public static void setMaxSpeed(int maxSpeed) {
-        MAX_SPEED = maxSpeed;
-    }
-
-    SpeedyGame(boolean isGreenLight, int MAX_SPEED) {
-        super(Game.isGreenLight = isGreenLight);
-        SpeedyGame.MAX_SPEED = MAX_SPEED;
+    public void setMaxSpeed(int maxSpeed) {
+        this.MAX_SPEED = maxSpeed;
     }
 
     @Override
     boolean isFailed(int speed) {
-        if (!isGreenLight) {
-            if (speed > MAX_SPEED) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
+        if ((!isGreenLight) &&(speed > MAX_SPEED)) {
+            return true;
+        } else{
             return false;
         }
     }

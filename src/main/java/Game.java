@@ -1,5 +1,5 @@
 public class Game {
-    static boolean isGreenLight;
+    protected boolean isGreenLight;
 
     public boolean isGreenLight() {
         return isGreenLight;
@@ -9,17 +9,15 @@ public class Game {
         isGreenLight = greenLight;
     }
 
-    Game(boolean isGreenLight) {
-        Game.isGreenLight = isGreenLight;
+    public Game(boolean isGreenLight) {
+        this.isGreenLight = isGreenLight;
     }
 
     boolean isFailed(int speed) {
         if (!isGreenLight) {
-            if (speed > 0) {
-                return true;
-            } else {
-                return false;
+            if (speed != 0) {
             }
+            return true;
         } else {
             return false;
         }

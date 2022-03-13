@@ -14,7 +14,7 @@ public class GameTest {
     public void GamePlayer2() {
         Game game = new Game(false);
         int speed = 0;
-        boolean expected = false;
+        boolean expected = true;
         boolean actual = game.isFailed(speed);
         Assertions.assertEquals(expected, actual);
     }
