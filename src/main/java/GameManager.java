@@ -1,6 +1,6 @@
 public class GameManager {
 
-    protected int[] speeds;
+    int[] speeds;
 
     public int[] getSpeeds() {
         return speeds;
