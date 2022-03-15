@@ -1,6 +1,6 @@
 public class GamesConditions {
     boolean isGreenLight;
-    static int MAX_SPEED;
+    int MAX_SPEED;
 
     public GamesConditions(boolean isGreenLight, int MAX_SPEED) {
         this.isGreenLight = isGreenLight;
