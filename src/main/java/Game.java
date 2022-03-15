@@ -1,5 +1,5 @@
 public class Game {
-    protected boolean isGreenLight;
+    boolean isGreenLight;
 
     public boolean isGreenLight() {
         return isGreenLight;
