@@ -5,59 +5,85 @@ public class HomeWork19 {
     static int MAX_SPEED = 3;
 
     public static int amountLoser(int[] speeds) {
-        int Loser = 0;
-        for (int speed : speeds) {
-            if (!isGreenLight) {
-                if (MAX_SPEED < speed) {
-                    Loser = Loser + 1;
+        if (isGreenLight) {
+            int loser = 0;
+            for (int speed : speeds) {
+                if (speed > MAX_SPEED) {
+                    loser++;
                 }
             }
+            return loser;
+        } else {
+            int win = 0;
+            for (int speed : speeds) {
+                win++;
+            }
+            return win;
         }
-        return Loser;
     }
 
     public static int[] arraySpeedLoser(int[] speeds) {
-        int cnt = 0;
-        for (int speed : speeds) {
-            if (!isGreenLight) {
-                if (MAX_SPEED < speed) {
+        if (isGreenLight) {
+            int cnt = 0;
+            for (int speed : speeds) {
+                if (speed > MAX_SPEED) {
                     cnt++;
                 }
             }
-        }
-        int[] speedsLoser = new int[cnt];
-        int i = 0;
-        for (int speed : speeds) {
-            if (!isGreenLight) {
-                if (MAX_SPEED < speed) {
+            int[] speedsLoser = new int[cnt];
+            int i = 0;
+            for (int speed : speeds) {
+                if (speed > MAX_SPEED) {
                     speedsLoser[i] = speed;
                     i++;
                 }
             }
+            return speedsLoser;
+        } else {
+            int cnt = 0;
+            for (int speed : speeds) {
+                cnt++;
+            }
+            int[] speedsLoser = new int[cnt];
+            int i = 0;
+            for (int speed : speeds) {
+                speedsLoser[i] = speed;
+                i++;
+            }
+            return speedsLoser;
         }
-        return speedsLoser;
     }
 
     public static int[] arraySpeedWin(int[] speeds) {
-        int cnt = 0;
-        for (int speed : speeds) {
-            if (!isGreenLight) {
+        if (isGreenLight) {
+            int cnt = 0;
+            for (int speed : speeds) {
                 if (MAX_SPEED >= speed) {
                     cnt++;
                 }
             }
-        }
-        int[] speedsWin = new int[cnt];
-        int i = 0;
-        for (int speed : speeds) {
-            if (!isGreenLight) {
+            int[] speedsWin = new int[cnt];
+            int i = 0;
+            for (int speed : speeds) {
                 if (MAX_SPEED >= speed) {
                     speedsWin[i] = speed;
                     i++;
                 }
             }
+            return speedsWin;
+        } else {
+            int cnt = 0;
+            for (int speed : speeds) {
+                cnt++;
+            }
+            int[] speedsWin = new int[cnt];
+            int i = 0;
+            for (int speed : speeds) {
+                speedsWin[i] = speed;
+                i++;
+            }
+            return speedsWin;
         }
-        return speedsWin;
     }
 
     public static String[] arrayNameWin(String[] namePlayers) {
@@ -65,9 +91,11 @@ public class HomeWork19 {
         for (String text : namePlayers) {
             String[] players = text.split(" "); // [Tom 5]
             int speed = Integer.parseInt(players[1]);
-            if (!isGreenLight) {
-                if (speed < MAX_SPEED) {
+            if (isGreenLight) {
+                if (speed <= MAX_SPEED) {
                     cnt++;
+                } else {
+                    continue;
                 }
             }
         }
@@ -75,39 +103,21 @@ public class HomeWork19 {
         String[] names = new String[cnt];
         int i = 0;
         for (String text : namePlayers) {
-            String[] players = text.split(" "); // [Tom 5]
+            String[] players = text.split(" ");
             int speed = Integer.parseInt(players[1]);
-            if (!isGreenLight) {
-                if (speed < MAX_SPEED) {
+            if (isGreenLight) {
+                if (speed <= MAX_SPEED) {
                     names[i] = players[0];
                     i++;
+                } else {
+                    if (speed <= MAX_SPEED) {
+                        names[i] = players[0];
+                        i++;
+                    }
                 }
             }
         }
         return names;
-    }
-
-    public static void main(String[] args) {
-        int[] speedPlayers = new int[3];
-        speedPlayers[0] = 5;
-        speedPlayers[1] = 0;
-        speedPlayers[2] = 2;
-        amountLoser(speedPlayers);
-        arraySpeedLoser(speedPlayers);
-        arraySpeedWin(speedPlayers);
-
-
-        String[] namePlayers = new String[3];
-        namePlayers[0] = "Tom 5";
-        namePlayers[1] = "Mike 0";
-        namePlayers[2] = "John 2";
-
-        arrayNameWin(namePlayers);
-
-        System.out.println("Выбыло " + amountLoser(speedPlayers));
-        System.out.println(Arrays.toString(arraySpeedLoser(speedPlayers)));
-        System.out.println(Arrays.toString(arraySpeedWin(speedPlayers)));
-        System.out.println(Arrays.toString(arrayNameWin(namePlayers)));
     }
 }
 

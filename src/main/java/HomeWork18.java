@@ -8,7 +8,7 @@ public class HomeWork18 {
         int Loser = 0;
         for (int speed : speeds) {
             if (!isGreenLight) {
-                if (MAX_SPEED < speed) {
+                if (speed > MAX_SPEED) {
                     Loser = Loser + 1;
                 }
             }
@@ -20,7 +20,7 @@ public class HomeWork18 {
         int cnt = 0;
         for (int speed : speeds) {
             if (!isGreenLight) {
-                if (MAX_SPEED < speed) {
+                if (speed > MAX_SPEED) {
                     cnt++;
                 }
             }
@@ -29,7 +29,7 @@ public class HomeWork18 {
         int i = 0;
         for (int speed : speeds) {
             if (!isGreenLight) {
-                if (MAX_SPEED < speed) {
+                if (speed > MAX_SPEED) {
                     speedsLoser[i] = speed;
                     i++;
                 }
@@ -42,7 +42,7 @@ public class HomeWork18 {
         int cnt = 0;
         for (int speed : speeds) {
             if (!isGreenLight) {
-                if (MAX_SPEED >= speed) {
+                if (speed <= MAX_SPEED) {
                     cnt++;
                 }
             }
@@ -51,7 +51,7 @@ public class HomeWork18 {
         int i = 0;
         for (int speed : speeds) {
             if (!isGreenLight) {
-                if (MAX_SPEED >= speed) {
+                if (speed <= MAX_SPEED) {
                     speedsWin[i] = speed;
                     i++;
                 }
