@@ -1,6 +1,6 @@
 public class GameManager {
 
-    int[] speeds;
+    private int[] speeds;
 
     public int[] getSpeeds() {
         return speeds;
@@ -14,17 +14,15 @@ public class GameManager {
         this.game = game;
     }
 
-    Game game = new Game(false);
+    Game game = new Game(true);
 
 
     public int rounds(int[] speeds) {
         int cnt = 0;
-        if (!game.isGreenLight) {
             for (int round : speeds) {
                 if (game.isFailed(round) == false) {
                     cnt++;
-                }
-            }
+                } else break;
         }
         return cnt;
     }
