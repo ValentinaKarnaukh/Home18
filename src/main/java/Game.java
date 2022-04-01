@@ -1,12 +1,12 @@
 public class Game {
-    boolean isGreenLight;
+    private boolean isGreenLight;
 
-    public boolean isGreenLight() {
+    public boolean getIsGreenLight() {
         return isGreenLight;
     }
 
-    public void setGreenLight(boolean greenLight) {
-        isGreenLight = greenLight;
+    public void setIsGreenLight(boolean newIsGreenLight) {
+        isGreenLight = newIsGreenLight;
     }
 
     public Game(boolean isGreenLight) {
@@ -14,9 +14,7 @@ public class Game {
     }
 
     boolean isFailed(int speed) {
-        if (!isGreenLight) {
-            if (speed != 0) {
-            }
+        if ((isGreenLight == false) && (speed != 0)) {
             return true;
         } else {
             return false;

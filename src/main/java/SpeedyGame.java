@@ -1,6 +1,6 @@
 public class SpeedyGame extends Game {
-    int MAX_SPEED;
-    SpeedyGame(boolean isGreenLight, int MAX_SPEED) {
+    private int MAX_SPEED;
+    public SpeedyGame(boolean isGreenLight, int MAX_SPEED) {
         super(isGreenLight);
         this.MAX_SPEED = MAX_SPEED;
     }
@@ -14,8 +14,8 @@ public class SpeedyGame extends Game {
     }
 
     @Override
-    boolean isFailed(int speed) {
-        if ((!isGreenLight) &&(speed > MAX_SPEED)) {
+    public boolean isFailed(int speed) {
+        if ((getIsGreenLight() == false) &&(speed > MAX_SPEED)) {
             return true;
         } else{
             return false;
