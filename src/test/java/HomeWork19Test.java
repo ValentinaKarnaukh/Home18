@@ -47,5 +47,15 @@ public class HomeWork19Test {
         String[] actual = HomeWork19.arrayNameWin(namePlayers);
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void arrayNameWin2 () {
+        HomeWork19.isGreenLight = false;
+        HomeWork19.MAX_SPEED = 3;
+        String[] namePlayers = {"Tom 5", "Mike 0","John 2"};
+        String[] expected = {"Tom", "Mike", "John"};
+        String[] actual = HomeWork19.arrayNameWin(namePlayers);
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
 

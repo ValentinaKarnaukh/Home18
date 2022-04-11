@@ -94,29 +94,30 @@ public class HomeWork19 {
             if (isGreenLight) {
                 if (speed <= MAX_SPEED) {
                     cnt++;
-                } else {
-                    continue;
                 }
+            } else {
+                cnt++;
             }
         }
 
+
         String[] names = new String[cnt];
         int i = 0;
-        for (String text : namePlayers) {
+        for (
+                String text : namePlayers) {
             String[] players = text.split(" ");
             int speed = Integer.parseInt(players[1]);
             if (isGreenLight) {
                 if (speed <= MAX_SPEED) {
                     names[i] = players[0];
                     i++;
-                } else {
-                    if (speed <= MAX_SPEED) {
-                        names[i] = players[0];
-                        i++;
-                    }
                 }
+            } else {
+                names[i] = players[0];
+                i++;
             }
         }
+
         return names;
     }
 }
